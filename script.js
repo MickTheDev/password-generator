@@ -50,15 +50,25 @@ function generateSign() {
     return tab[Math.floor(Math.random() * tab.length)]
 }
 
-document.querySelector('button').addEventListener('click', generatePassword);
-
 document.querySelector('button').addEventListener('click', () => {
-    const password = document.querySelector('.password_element').value;
-    
-    if(!password) {
-        return;
+    const len = document.querySelector(".lenght").value;
+    const boxes = [...document.querySelectorAll('input[type="checkbox"]')]
+
+    document.querySelector('.error_message').classList.remove('active')
+    document.querySelector('.password_element').classList.remove('active')
+    document.querySelector('.wrapper').classList.remove('active')
+
+    if(boxes.some(box => box.checked)){
+        if(len > 4 && len < 21) {
+            document.querySelector('.password_element').classList.add('active')
+            const password = generatePassword();
+        } else {
+            document.querySelector('.error_message').classList.add('active')
+        }
+    } else {
+        document.querySelector('.error_message').classList.add('active')
     }
-    
-    document.querySelector('.password_element').select();
-    document.execCommand('copy')
+    if(document.querySelector('.error_message').className.endsWith('active') || document.querySelector('.password_element').className.endsWith('active')) {
+        document.querySelector('.wrapper').classList.add('active')
+    }
 });
