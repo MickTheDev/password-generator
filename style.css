@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4071f4;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 400px;
+    height: auto;
+    padding: 16px 30px 16px 20px;
+    background: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    position: relative;
+}
+
+.wrapper form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .password_element {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(42, 210, 37, .4);
+    border: 1px solid rgb(3, 88, 0);
+    margin-bottom: 20px;
+}
+
+form label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label input[type="number"] {
+    width: 80px;
+}
+
+form button {
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #4071f4;
+    color: #fff;
+    font-size: 1.4rem;
+    transition: background .4s ease;
+    border-radius: 8px;
+}
+
+form button:hover {
+    background: #295ceb;
+}
+
+@media screen and (max-width: 576px) {
+    .wrapper {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .wrapper form {
+        justify-content: center;
+        row-gap: 20px;
+        padding: 0 15px;
+    }
+}
